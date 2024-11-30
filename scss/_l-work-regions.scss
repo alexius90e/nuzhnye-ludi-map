@@ -48,6 +48,7 @@
     z-index: 2;
     display: flex;
     gap: 64px;
+    width: fit-content;
 
     @include desktop {
       gap: 24px;
@@ -67,6 +68,9 @@
         font-size: 18px;
         line-height: 175%;
         color: #5b5b5b;
+        transition: all ease-in-out 0.2s;
+        user-select: none;
+        cursor: pointer;
 
         @include desktop {
           font-size: 16px;
@@ -74,6 +78,11 @@
 
         @include mobile {
           font-size: 18px;
+        }
+
+        &:hover {
+          text-decoration: underline;
+          text-shadow: 0 0 2px rgba($color: #5b5b5b, $alpha: 0.25);
         }
       }
     }
@@ -116,6 +125,14 @@
 
       @include mobile {
         min-width: 560px;
+      }
+
+      & > path {
+        transition: fill ease-in-out 0.2s;
+
+        &.active {
+          fill: #00bbcf;
+        }
       }
     }
   }

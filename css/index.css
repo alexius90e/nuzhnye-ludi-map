@@ -96,6 +96,8 @@ img {
   z-index: 2;
   display: flex;
   gap: 64px;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 @media (max-width: 1120px) {
   .work-regions__regions {
@@ -117,6 +119,11 @@ img {
   font-size: 18px;
   line-height: 175%;
   color: #5b5b5b;
+  transition: all ease-in-out 0.2s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
 }
 @media (max-width: 1120px) {
   .work-regions__regions-list-item {
@@ -127,6 +134,10 @@ img {
   .work-regions__regions-list-item {
     font-size: 18px;
   }
+}
+.work-regions__regions-list-item:hover {
+  text-decoration: underline;
+  text-shadow: 0 0 2px rgba(91, 91, 91, 0.25);
 }
 .work-regions__map {
   position: absolute;
@@ -171,4 +182,10 @@ img {
   .work-regions__map > svg {
     min-width: 560px;
   }
+}
+.work-regions__map > svg > path {
+  transition: fill ease-in-out 0.2s;
+}
+.work-regions__map > svg > path.active {
+  fill: #00bbcf;
 }
