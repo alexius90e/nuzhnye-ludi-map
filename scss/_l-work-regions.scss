@@ -27,15 +27,17 @@
     font-family: 'Maler', sans-serif;
     font-weight: 400;
     font-size: 64px;
+    line-height: 1.1;
     color: #5b5b5b;
+
+    @include laptop {
+      margin: 0 0 30px;
+      font-size: 50px;
+    }
 
     @include mobile {
       margin: 0 0 30px;
-      font-size: 46px;
-    }
-
-    @include mobilesm {
-      font-size: 32px;
+      font-size: 40px;
     }
 
     & > span {
@@ -55,12 +57,21 @@
     }
 
     @include mobile {
-      display: block;
+      flex-direction: column;
+      gap: 10px;
     }
 
     &-list {
       margin: 0;
       padding-left: 40px;
+
+      @include mobile {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 0;
+        list-style-type: none;
+      }
 
       &-item {
         font-family: 'Inter', sans-serif;
@@ -77,12 +88,28 @@
         }
 
         @include mobile {
-          font-size: 18px;
+          flex: 0 0 calc(100% / 3 - 10px / 3 * 2);
+          padding: 6px 10px;
+          box-sizing: border-box;
+          font-size: 10px;
+          line-height: 110%;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          border: 1px solid rgba($color: #5b5b5b, $alpha: 0.2);
+          border-radius: 30px;
         }
 
         &:hover {
           text-decoration: underline;
           text-shadow: 0 0 2px rgba($color: #5b5b5b, $alpha: 0.25);
+
+          @include mobile {
+            color: #ffffff;
+            text-decoration: none;
+            border-color: #00bbcf;
+            background-color: #00bbcf;
+          }
         }
       }
     }
